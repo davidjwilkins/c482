@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane
+        xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+        GridPane.columnIndex="0" GridPane.rowIndex="1"
+        GridPane.columnSpan="2"
+>
+    <Label
+            text="ID"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="0"
+    />
+    <TextField
+            disable="true"
+            text="Auto Gen - Disabled"
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="0"
+            GridPane.columnSpan="3"
+    />
+    <Label
+            text="Name"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="1"
+    />
+    <TextField
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="1"
+            GridPane.columnSpan="3"
+    />
+    <Label
+            text="Inv"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="2"
+    />
+    <TextField
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="2"
+            GridPane.columnSpan="3"
+    />
+    <Label
+            text="Price/Cost"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="3"
+    />
+    <TextField
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="3"
+            GridPane.columnSpan="3"
+    />
+    <Label
+            text="Max"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="4"
+    />
+    <TextField
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="4" />
+    <Label
+            text="Min"
+            GridPane.columnIndex="2"
+            GridPane.rowIndex="4"
+    />
+    <TextField
+            GridPane.columnIndex="3"
+            GridPane.rowIndex="4" />
+    <Label
+            text="Company Name"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="5"
+    />
+    <TextField
+            GridPane.columnIndex="1"
+            GridPane.rowIndex="5"
+            GridPane.columnSpan="3"
+    />
+</GridPane>

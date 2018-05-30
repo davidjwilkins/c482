@@ -1,0 +1,72 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<GridPane fx:controller="sample.ProductsController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
+>
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+    <GridPane
+            xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10"
+            GridPane.columnIndex="0" GridPane.rowIndex="0"
+    >
+        <Text text="Add Product"
+              fx:id="title"
+              style="-fx-font-size: 22px; -fx-font-weight: bold;"
+              GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <fx:include source="partForm.fxml"/>
+    </GridPane>
+    <GridPane
+            xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10"
+            GridPane.columnIndex="1" GridPane.rowIndex="0"
+            GridPane.columnSpan="3"
+    >
+        <Button
+                text="Search"
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="0"
+        />
+        <TextField
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"
+        />
+        <TableView
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="1"
+                GridPane.columnSpan="4"
+        />
+        <Button
+                text="Add"
+                GridPane.columnIndex="3"
+                GridPane.rowIndex="2"
+        />
+        <TableView
+                GridPane.columnIndex="0"
+                GridPane.rowIndex="3"
+                GridPane.columnSpan="4"
+        />
+        <Button
+                text="Add"
+                GridPane.columnIndex="3"
+                GridPane.rowIndex="4"
+        />
+        <GridPane
+                GridPane.columnIndex="3"
+                GridPane.rowIndex="5">
+            <Button text="Save" GridPane.columnIndex="0" GridPane.rowIndex="0"
+                    GridPane.halignment="RIGHT"/>
+            <Button
+                text="Cancel"
+                GridPane.columnIndex="1"
+                GridPane.rowIndex="0"
+                fx:id="cancelButton"
+            />
+        </GridPane>
+    </GridPane>
+
+
+</GridPane>
