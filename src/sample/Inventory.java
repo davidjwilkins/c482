@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Inventory {
     protected ArrayList<Part> allParts;
     protected ArrayList<Product> products;
-
+    protected static int nextID = 1;
     public Inventory() {
         this.allParts = new ArrayList<Part>();
         this.products = new ArrayList<Product>();
@@ -36,6 +36,8 @@ public class Inventory {
     }
 
     public void addPart(Part part) {
+        part.setPartID(nextID);
+        nextID++;
         this.allParts.add(part);
     }
 

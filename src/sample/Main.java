@@ -26,15 +26,20 @@ public class Main extends Application {
         FXMLLoader productsLoader = new FXMLLoader(getClass().getResource("addProduct.fxml"));
         Parent root = rootLoader.load();
         primaryStage.setTitle(title);
-        mainScene = new Scene(root, 800, 640);
+        mainScene = new Scene(root, 1000, 640);
         primaryStage.setScene(mainScene);
         primaryStage.show();
+        Controller mainController = rootLoader.getController();
+        mainController.setRootController(this);
+        mainController.setInventory(inventory);
         Parent addPart = partsLoader.load();
         PartsController partsController = partsLoader.<PartsController>getController();
         partsController.setRootController(this);
+        partsController.setInventory(inventory);
         Parent addProduct = productsLoader.load();
         ProductsController productsController = productsLoader.<ProductsController>getController();
         productsController.setRootController(this);
+        productsController.setInventory(inventory);
         addPartScene = new Scene(addPart, 560, 340);
 
         EventHandler addPartHandler = new EventHandler<ActionEvent>() {

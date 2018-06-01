@@ -9,7 +9,7 @@ public class ProductsController {
     @FXML
     protected Button cancelButton;
     protected Main rootController;
-
+    protected Inventory inventory;
     public void initialize() {
         EventHandler cancelHandler = new EventHandler<ActionEvent>() {
             @Override
@@ -21,5 +21,8 @@ public class ProductsController {
     }
     public void setRootController(Main m) {
         this.rootController = m;
+    }
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 }
