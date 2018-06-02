@@ -40,7 +40,6 @@ public class Controller {
                 inventory.deletePart(partsTable.getSelectionModel().getSelectedIndex());
             }
         };
-        deletePartButton = (Button)mainScene.lookup("#deletePartButton");
         deletePartButton.setOnAction(deletePartHandler);
     }
 }
