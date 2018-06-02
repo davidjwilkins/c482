@@ -16,7 +16,7 @@ public class Main extends Application {
     private Scene mainScene, addPartScene, addProductScene;
     private Stage primaryStage;
     @FXML
-    protected Button addPartButton, addProductButton;
+    protected Button addPartButton, addProductButton, editPartButton, editProductButton;
 
     protected PartsController partsController;
     protected Controller mainController;
@@ -53,6 +53,17 @@ public class Main extends Application {
         };
         addPartButton = (Button)mainScene.lookup("#addPartButton");
         addPartButton.setOnAction(addPartHandler);
+
+        EventHandler editPartHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e) {
+                primaryStage.setScene(addPartScene);
+                partsController.setPart(mainController.getSelectedPart());
+                primaryStage.show();
+            }
+        };
+        editPartButton = (Button)mainScene.lookup("#editPartButton");
+        editPartButton.setOnAction(editPartHandler);
 
         addProductScene = new Scene(addProduct, 950, 500);
 

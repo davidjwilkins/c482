@@ -6,11 +6,11 @@ import javafx.scene.control.TextField;
 public class PartsFormController {
     @FXML
     protected TextField id, name, inv, price, max, min, companyName;
-
+    private final String NO_ID = "Auto Gen - Disabled";
     public int getId() {
         String i = id.getText();
         System.out.println(i);
-        if (i.isEmpty() || i.equals("Auto Gen - Disabled")) {
+        if (i.isEmpty() || i.equals(NO_ID)) {
             return 0;
         }
         return Integer.parseInt(id.getText());
@@ -54,5 +54,28 @@ public class PartsFormController {
 
     public String getCompanyName() {
         return companyName.getText();
+    }
+
+    public void setPart(Part part) {
+        if (part.getPartID() == 0) {
+            this.id.setText(NO_ID);
+        } else {
+            this.id.setText(Integer.toString(part.getPartID()));
+        }
+        this.inv.setText(Integer.toString(part.getInStock()));
+        this.price.setText(Double.toString(part.getPrice()));
+        this.name.setText(part.getName());
+        this.min.setText(Integer.toString(part.getMin()));
+        this.max.setText(Integer.toString(part.getMax()));
+    }
+
+    public void clear() {
+        this.id.setText(NO_ID);
+        this.inv.clear();
+        this.name.clear();
+        this.price.clear();
+        this.min.clear();
+        this.max.clear();
+        this.companyName.clear();
     }
 }

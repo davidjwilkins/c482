@@ -50,6 +50,8 @@ public class PartsController {
                 part.setPrice(partsFormController.getPrice());
 
                 inventory.addPart(part);
+                partsFormController.clear();
+                rootController.mainScene();
             }
         };
         saveButton.setOnAction(saveHandler);
@@ -59,6 +61,10 @@ public class PartsController {
     }
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
+    }
+    public void setPart(Part part) {
+        this.inHouseButton.setSelected(part instanceof Inhouse);
+        partsFormController.setPart(part);
     }
 
 }
