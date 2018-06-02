@@ -3,7 +3,7 @@ package sample;
 /**
  * Created by dave on 5/28/18.
  */
-abstract  public class Part {
+abstract public class Part {
     protected int partID;
     protected String name;
     protected double price;

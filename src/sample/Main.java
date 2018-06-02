@@ -18,6 +18,8 @@ public class Main extends Application {
     @FXML
     protected Button addPartButton, addProductButton;
 
+    protected PartsController partsController;
+    protected Controller mainController;
     @Override
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
@@ -33,7 +35,7 @@ public class Main extends Application {
         mainController.setRootController(this);
         mainController.setInventory(inventory);
         Parent addPart = partsLoader.load();
-        PartsController partsController = partsLoader.<PartsController>getController();
+        partsController = partsLoader.<PartsController>getController();
         partsController.setRootController(this);
         partsController.setInventory(inventory);
         Parent addProduct = productsLoader.load();

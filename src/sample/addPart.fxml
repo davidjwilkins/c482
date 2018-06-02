@@ -35,8 +35,7 @@
             toggleGroup="$addPartToggle"
         />
     </GridPane>
-
-    <fx:include source="partForm.fxml"/>
+    <fx:include fx:id="partsForm" source="partForm.fxml" />
     <Button
             fx:id="saveButton"
             text="Save"

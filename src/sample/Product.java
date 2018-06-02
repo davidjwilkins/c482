@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.property.*;
+
 import java.util.ArrayList;
 
 /**
@@ -7,12 +9,12 @@ import java.util.ArrayList;
  */
 public class Product {
     protected ArrayList<Part> associatedParts;
-    protected int productID;
-    protected String name;
-    protected double price;
-    protected int inStock;
-    protected int min;
-    protected int max;
+    protected IntegerProperty productID;
+    protected SimpleStringProperty name;
+    protected DoubleProperty price;
+    protected IntegerProperty inStock;
+    protected IntegerProperty min;
+    protected IntegerProperty max;
 
     public ArrayList<Part> getAssociatedParts() {
         return associatedParts;
@@ -40,50 +42,56 @@ public class Product {
     }
 
     public int getProductID() {
-        return productID;
+        return productID.get();
     }
 
     public void setProductID(int productID) {
-        this.productID = productID;
+        this.productID.set(productID);
     }
 
     public String getName() {
-        return name;
+        return name.get();
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name.set(name);
     }
 
     public double getPrice() {
-        return price;
+        return price.get();
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        this.price.set(price);
     }
 
     public int getInStock() {
-        return inStock;
+        return inStock.get();
     }
 
     public void setInStock(int inStock) {
-        this.inStock = inStock;
+        this.inStock.set(inStock);
     }
 
     public int getMin() {
-        return min;
+        return min.get();
     }
 
     public void setMin(int min) {
-        this.min = min;
+        this.min.set(min);
     }
 
     public int getMax() {
-        return max;
+        return max.get();
     }
 
     public void setMax(int max) {
-        this.max = max;
+        this.max.set(max);
     }
+
+    public final StringProperty nameProperty() { return new SimpleStringProperty(this.getName()); }
+    public final DoubleProperty priceProperty() { return new SimpleDoubleProperty(this.getPrice()); }
+    public final IntegerProperty minProperty() { return new SimpleIntegerProperty(this.getMin()); }
+    public final IntegerProperty maxProperty() { return new SimpleIntegerProperty(this.getMax()); }
+    public final IntegerProperty inStockProperty() { return new SimpleIntegerProperty(this.getInStock()); }
 }

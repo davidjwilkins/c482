@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 
 <GridPane
         xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
         GridPane.columnIndex="0" GridPane.rowIndex="1"
         GridPane.columnSpan="2"
+        fx:controller="sample.PartsFormController"
 >
     <Label
             text="ID"
@@ -13,6 +15,7 @@
             GridPane.rowIndex="0"
     />
     <TextField
+            fx:id="id"
             disable="true"
             text="Auto Gen - Disabled"
             GridPane.columnIndex="1"
@@ -25,6 +28,7 @@
             GridPane.rowIndex="1"
     />
     <TextField
+            fx:id="name"
             GridPane.columnIndex="1"
             GridPane.rowIndex="1"
             GridPane.columnSpan="3"
@@ -35,6 +39,7 @@
             GridPane.rowIndex="2"
     />
     <TextField
+            fx:id="inv"
             GridPane.columnIndex="1"
             GridPane.rowIndex="2"
             GridPane.columnSpan="3"
@@ -45,6 +50,7 @@
             GridPane.rowIndex="3"
     />
     <TextField
+            fx:id="price"
             GridPane.columnIndex="1"
             GridPane.rowIndex="3"
             GridPane.columnSpan="3"
@@ -55,6 +61,7 @@
             GridPane.rowIndex="4"
     />
     <TextField
+            fx:id="max"
             GridPane.columnIndex="1"
             GridPane.rowIndex="4" />
     <Label
@@ -63,6 +70,7 @@
             GridPane.rowIndex="4"
     />
     <TextField
+            fx:id="min"
             GridPane.columnIndex="3"
             GridPane.rowIndex="4" />
     <Label
@@ -71,6 +79,7 @@
             GridPane.rowIndex="5"
     />
     <TextField
+            fx:id="companyName"
             GridPane.columnIndex="1"
             GridPane.rowIndex="5"
             GridPane.columnSpan="3"

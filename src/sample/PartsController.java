@@ -1,24 +1,28 @@
 package sample;
-import java.lang.Integer;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+
+import javax.swing.*;
 
 public class PartsController {
+    @FXML
+    protected PartsFormController partsFormController;
+
     @FXML
     protected Button cancelButton;
     @FXML
     protected Button saveButton;
     @FXML
-    protected RadioButton inHouse;
-    @FXML
-    protected TextField id, name, inv, price, max, min, companyName;
+    protected RadioButton inHouseButton;
+
 
     protected Main rootController;
     protected Inventory inventory;
+
     public void initialize() {
         EventHandler cancelHandler = new EventHandler<ActionEvent>() {
             @Override
@@ -32,17 +36,18 @@ public class PartsController {
             @Override
             public void handle(ActionEvent e) {
                 Part part;
-                if (inHouse.isSelected()) {
+                if (inHouseButton.isSelected()) {
                     part = new Inhouse();
                 } else {
                     part = new Outsourced();
                 }
 
-                part.setName(name.getText());
-                part.setInStock(Integer.parseInt(inv.getText()));
-                part.setMin(Integer.parseInt(min.getText()));
-                part.setMax(Integer.parseInt(max.getText()));
-                part.setPrice(Double.parseDouble(price.getText()));
+                part.setPartID(partsFormController.getId());
+                part.setName(partsFormController.getName());
+                part.setInStock(partsFormController.getInv());
+                part.setMin(partsFormController.getMin());
+                part.setMax(partsFormController.getMax());
+                part.setPrice(partsFormController.getPrice());
 
                 inventory.addPart(part);
             }
@@ -55,4 +60,5 @@ public class PartsController {
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
+
 }

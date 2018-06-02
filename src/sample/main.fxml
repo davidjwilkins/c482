@@ -5,6 +5,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <GridPane fx:controller="sample.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"
           minWidth="1000"
@@ -35,12 +36,24 @@
         >
             <columns>
                 <TableColumn text="Part ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="partID" />
+                    </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Part Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Inventory Level" minWidth="120">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="partID" />
+                    </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Price/Cost per unit" minWidth="140">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price" />
+                    </cellValueFactory>
                 </TableColumn>
             </columns>
         </TableView>
@@ -75,12 +88,24 @@
         >
             <columns>
                 <TableColumn text="Product ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="productID" />
+                    </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Product Name" minWidth="100">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Inventory Level" minWidth="120">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="inStock" />
+                    </cellValueFactory>
                 </TableColumn>
                 <TableColumn text="Price per unit" minWidth="120">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price" />
+                    </cellValueFactory>
                 </TableColumn>
             </columns>
         </TableView>
