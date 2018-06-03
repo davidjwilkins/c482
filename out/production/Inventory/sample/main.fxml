@@ -63,8 +63,12 @@
                 GridPane.rowIndex="2"
                 fx:id="addPartButton"
         />
-        <Button text="Modify" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <Button text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <Button text="Modify" GridPane.columnIndex="1" GridPane.rowIndex="2"
+            fx:id="editPartButton"
+        />
+        <Button text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="2"
+            fx:id="deletePartButton"
+        />
     </GridPane>
     <GridPane
             xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10"

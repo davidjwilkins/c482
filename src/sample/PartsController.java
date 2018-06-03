@@ -1,12 +1,11 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
-
-import javax.swing.*;
 
 public class PartsController {
     @FXML
@@ -32,6 +31,19 @@ public class PartsController {
         };
         cancelButton.setOnAction(cancelHandler);
 
+        EventHandler inHouseButtonChangeHandler = new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if (inHouseButton.isSelected()) {
+                    partsFormController.setCompanyNameEnabled(false);
+                } else {
+                    partsFormController.setCompanyNameEnabled(true);
+                }
+            }
+        };
+        inHouseButton.setOnAction(inHouseButtonChangeHandler);
+        inHouseButton.setSelected(true);
+        partsFormController.setCompanyNameEnabled(false);
         EventHandler saveHandler = new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
@@ -51,6 +63,7 @@ public class PartsController {
 
                 inventory.addPart(part);
                 partsFormController.clear();
+                inHouseButton.setSelected(true);
                 rootController.mainScene();
             }
         };

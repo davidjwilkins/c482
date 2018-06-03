@@ -7,6 +7,15 @@ public class PartsFormController {
     @FXML
     protected TextField id, name, inv, price, max, min, companyName;
     private final String NO_ID = "Auto Gen - Disabled";
+
+    public void setCompanyNameEnabled(boolean enabled) {
+        companyName.setDisable(!enabled);
+        companyName.setEditable(enabled);
+        if (!enabled) {
+            companyName.clear();
+        }
+    }
+
     public int getId() {
         String i = id.getText();
         System.out.println(i);
